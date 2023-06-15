@@ -1,0 +1,18 @@
+input: .
+output: .retype
+url: # Add your website address here
+branding:
+  title: Yash Thakre
+  label: Blog
+links:
+- text: LinkedIn
+  link: https://linkedin.com/in/yashnthakre
+  icon: person
+- text: Github
+  link: https://github.com/thakreyn
+  icon: github
+- text: Leetcode
+  link: leetcode
+  icon: code
+footer:
+  copyright: "&copy; Copyright {{ year }}. All rights reserved."
