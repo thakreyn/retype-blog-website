@@ -1,6 +1,6 @@
 input: .
 output: .retype
-url: # Add your website address here
+url: https://thakreyn.github.io/retype-blog-website/
 branding:
   title: Yash Thakre
   label: Blog
@@ -10,9 +10,12 @@ links:
   icon: person
 - text: Github
   link: https://github.com/thakreyn
-  icon: github
+  icon: mark-github
 - text: Leetcode
-  link: leetcode
+  link: https://leetcode.com/thakreyn/
   icon: code
+- text: Resume
+  link: https://drive.google.com/file/d/1Z7zYYwxJlT1MG0kw2W4Tbk_xUd2IFfRG/view?usp=sharing
+  icon: note
 footer:
-  copyright: "&copy; Copyright {{ year }}. All rights reserved."
+  copyright: "❤️ From 🇮🇳. &copy; Copyright {{ year }}. All rights reserved."
