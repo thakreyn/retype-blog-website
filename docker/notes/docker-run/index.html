@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/retype-blog-website">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.745573790268">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.745592833139">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.1.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("/retype-blog-website/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.1.0.745573790268" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.1.0.745592833139" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.1.0.745573790268" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.1.0.745592833139" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.1.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.1.0.745573790268" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.1.0.745592833139" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -271,7 +271,7 @@
     </h3>
 </doc-anchor-target>
 <p>It is used to give the container a unique name so that it can be easily referenced.
-eg: &#x60;docker run --name <Name> <image></p>
+eg: <code v-pre>docker run --name &lt;Name&gt; &lt;image&gt;</code></p>
 <doc-anchor-target id="stdin">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#stdin">#</doc-anchor-trigger>
@@ -325,6 +325,14 @@ In the above, we can see that when we run the <code v-pre>ps</code> command, the
 <blockquote>
 <p>Observation: When using flags like <code v-pre>-v</code> and <code v-pre>-p</code>, the host always comes first and then the container. ie: <code v-pre>&lt;host&gt;:&lt;container&gt;</code></p>
 </blockquote>
+<doc-anchor-target id="environment-variables--e">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#environment-variables--e">#</doc-anchor-trigger>
+        <span>Environment Variables (-e)</span>
+    </h3>
+</doc-anchor-target>
+<p>Sometimes, we need to pass in environment variables to pass with the image. This can be done using the <code v-pre>-e</code> flag. This flag followed by the values sets the env variables for the image.</p>
+<p>eg: <code v-pre>docker run -e POSTGRES_PASSWORD=&quot;secret&quot; postgres</code></p>
 
                                 
                                 <!-- Required only on API pages -->
