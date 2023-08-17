@@ -13,7 +13,7 @@ To run the container in detached mode, we the `-d` flag. In case we have detache
 
 ### Name Container (--name)
 It is used to give the container a unique name so that it can be easily referenced.
-eg: `docker run --name <Name> <image>
+eg: `docker run --name <Name> <image>`
 
 ### STDIN
 When we normally run a docker container, we are attached to the container session but we cannot pass any input to the container. We are just spectators and can read the outputs. 
@@ -56,6 +56,8 @@ When a container is created, it has its own isolated filesystem. Any changes to 
 
 > Observation: When using flags like `-v` and `-p`, the host always comes first and then the container. ie: `<host>:<container>`
 
+### Environment Variables (-e)
+Sometimes, we need to pass in environment variables to pass with the image. This can be done using the `-e` flag. This flag followed by the values sets the env variables for the image.
 
-
+eg: `docker run -e POSTGRES_PASSWORD="secret" postgres`
 

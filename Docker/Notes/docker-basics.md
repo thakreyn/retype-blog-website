@@ -1,3 +1,5 @@
+[](/resources/docker-notes-cover.png)
+
 ## What is a container?
 
 It is a containerisation platform. The main difference between containers and VMs is that the VMs work on top of hardware level. They directly take that resource whereas the containers work on top of the base OS. They use the resources of the base OS to process.
