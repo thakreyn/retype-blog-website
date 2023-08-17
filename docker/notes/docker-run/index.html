@@ -10,24 +10,26 @@
     <meta name="generator" content="Retype 3.1.0">
 
     <!-- Primary Meta Tags -->
-    <title>Alembic</title>
-    <meta name="title" content="Alembic">
-    <meta name="description" content="Alembic is a lightweight database migration tool for SQLAlchemy (python).">
+    <title>Docker run</title>
+    <meta name="title" content="Docker run">
+    <meta name="description" content="Every image on docker hub, has a tag associated to it. It is similar to a version for the image. By default, when we run an image using ">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://thakreyn.github.io/retype-blog-website/articles/python/alembic/">
+    <link rel="canonical" href="https://thakreyn.github.io/retype-blog-website/docker/notes/docker-run/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://thakreyn.github.io/retype-blog-website/articles/python/alembic/">
-    <meta property="og:title" content="Alembic">
-    <meta property="og:description" content="Alembic is a lightweight database migration tool for SQLAlchemy (python).">
+    <meta property="og:url" content="https://thakreyn.github.io/retype-blog-website/docker/notes/docker-run/">
+    <meta property="og:title" content="Docker run">
+    <meta property="og:description" content="Every image on docker hub, has a tag associated to it. It is similar to a version for the image. By default, when we run an image using ">
+    <meta property="og:image" content="https://thakreyn.github.io/retype-blog-website/resources/docker-run-1.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://thakreyn.github.io/retype-blog-website/articles/python/alembic/">
-    <meta property="twitter:title" content="Alembic">
-    <meta property="twitter:description" content="Alembic is a lightweight database migration tool for SQLAlchemy (python).">
+    <meta property="twitter:url" content="https://thakreyn.github.io/retype-blog-website/docker/notes/docker-run/">
+    <meta property="twitter:title" content="Docker run">
+    <meta property="twitter:description" content="Every image on docker hub, has a tag associated to it. It is similar to a version for the image. By default, when we run an image using ">
+    <meta property="twitter:image" content="https://thakreyn.github.io/retype-blog-website/resources/docker-run-1.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("/retype-blog-website/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -36,8 +38,6 @@
     <script data-cfasync="false" src="../../../resources/js/config.js?v=3.1.0.745573790268" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.1.0" data-turbo-eval="false" defer></script>
     <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.1.0.745573790268" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../../resources/js/prism.js?v=3.1.0.745573790268" defer></script>
-    <script id="mermaid-js" data-cfasync="false" src="../../../resources/js/mermaid.js?v=3.1.0" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -241,191 +241,90 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="alembic" class="break-words">
+<doc-anchor-target id="docker-run" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#alembic">#</doc-anchor-trigger>
-        <span>Alembic</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#docker-run">#</doc-anchor-trigger>
+        <span>Docker run</span>
     </h1>
 </doc-anchor-target>
-<p>Alembic is a lightweight database migration tool for SQLAlchemy (python). Just like we have a version control for Git, Alembic acts as a version control for the Database.</p>
-<doc-anchor-target id="setup">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#setup">#</doc-anchor-trigger>
-        <span>Setup</span>
-    </h2>
+<doc-anchor-target id="tag">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tag">#</doc-anchor-trigger>
+        <span>Tag</span>
+    </h3>
 </doc-anchor-target>
-<p>This section contains information about the steps to setup alembic and also what each of its files mean. If you want to know more about the
-implementation, you can g</p>
-<ul>
-<li><p>Since Alembic is a python tool, you can easily install by using <code v-pre>pip</code> package manner. Just run the following command to install alembic
-in your environment.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">pip install alembic</code></pre>
-</doc-codeblock></div>
-<p>Once this is done, we are ready to use alembic, you can try writing <code v-pre>alembic</code> in the terminal to see if it is installed.</p>
+<p>Every image on docker hub, has a tag associated to it. It is similar to a version for the image. By default, when we run an image using <code v-pre>docker run &lt;image&gt;</code> , it uses the <code v-pre>latest</code> tag by default.</p>
+<p>To specify the tag, so that we can run an specific version, we can use <code v-pre>:</code> with the image name.</p>
+<center>Eg: docker run redis:4.0</center>
+<p>To know about all the versions and tags for an image, we can go to <a href="https://hub.docker.com/">Docker Hub</a> and look for all the tags or versions in the description of an image.</p>
+<doc-anchor-target id="detached-mode--d">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#detached-mode--d">#</doc-anchor-trigger>
+        <span>Detached Mode (-d)</span>
+    </h3>
+</doc-anchor-target>
+<p>To run the container in detached mode, we the <code v-pre>-d</code> flag. In case we have detached from a container and want to go back to it, we use the <code v-pre>attach</code> command.</p>
+<doc-anchor-target id="name-container---name">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#name-container---name">#</doc-anchor-trigger>
+        <span>Name Container (--name)</span>
+    </h3>
+</doc-anchor-target>
+<p>It is used to give the container a unique name so that it can be easily referenced.
+eg: &#x60;docker run --name <Name> <image></p>
+<doc-anchor-target id="stdin">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#stdin">#</doc-anchor-trigger>
+        <span>STDIN</span>
+    </h3>
+</doc-anchor-target>
+<p>When we normally run a docker container, we are attached to the container session but we cannot pass any input to the container. We are just spectators and can read the outputs.
+To be able to provide our inputs to the container, we need to map our STDIN (standard input) to the containers. This is done with the <code v-pre>-i</code> flag.</p>
+<p>Eg: <code v-pre>docker run -i &lt;image&gt;</code> : Allows us to run in <strong>interactive mode</strong>. Which allows us to map our terminal STDIN to the container&#x27;s.</p>
+<p>If we want to completely map our terminal to the container, we use <code v-pre>-it</code> flag which represents <strong>interactive terminal</strong> mode.
+Eg: <code v-pre>docker run -it &lt;image&gt;</code></p>
+<p>To exit from the interactive mode, type <code v-pre>exit</code> in the shell.</p>
+<doc-anchor-target id="port-mapping--p">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#port-mapping--p">#</doc-anchor-trigger>
+        <span>Port Mapping (-p)</span>
+    </h3>
+</doc-anchor-target>
+<p>This is one of the most important concepts for the usability of docker. For a container to be useful, it needs to interact with the outside world. This is where port mapping comes in.
+It allows us to map a port from our host to the container.</p>
+<blockquote>
+<p>Host = Machine on which docker is running</p>
+<p>Container = Docker container in which our app is running</p>
+</blockquote>
+<p>There are 2 ways to access this container:</p>
+<ol>
+<li><p>Internal IP : Every docker container is given an internal IP address. Thus we can use this IP address to access the container. But this allows only the &#x27;Host&#x27; to access the container (as it is an internal IP). Any machine/user outside the host machine cannot use the internal IP.</p>
 </li>
-<li><p>Now to start with alembic, we need to initialise our project. So just like <code v-pre>git</code> we run the <code v-pre>init</code> method to set up alembic for our project.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">alembic init alembic</code></pre>
-</doc-codeblock></div>
-<p>Once you have initialised alembic, a new folder named <code v-pre>alembic</code> will pop up along with a file called <code v-pre>alembic.ini</code>. The folder structure for that folder will be as follows:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">alembic
-├── README
-├── env.py
-├── script.py.mako
-└── versions/
-alembic.ini</code></pre>
-</doc-codeblock></div>
-<p>Here&#x27;s what these files do: 1. <code v-pre>alembic.ini</code> : This is the configuration file for alembic. It defines the database connection and other information which alembic uses to do the migrations. We can also mention things like which tables to include/exclude etc.
-Following is a sample alembic.ini file:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-ini"><code v-pre class="language-ini">  [alembic]
-  script_location = alembic_migrations
-  sqlalchemy.url = postgresql://user:password@localhost/dbname
-
-  [alembic:exclude]
-  tables = excluded_table1, excluded_table2
-
-  [alembic:include]
-  tables = included_table1, included_table2</code></pre>
-</doc-codeblock></div>
-<p>There might be cases where we want to use multiple <code v-pre>.ini</code> files for different cases. Say for example you can have a <code v-pre>prod.ini</code>, <code v-pre>dev.ini</code> etc. We can then explicitly specify which file to use.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">alembic -c dev.ini upgrade head</code></pre>
-</doc-codeblock></div>
-<ol start="2">
-<li><p><code v-pre>env.py</code> : This is a Python script that sets up the migration environment and provides the necessary configurations for Alembic to manage database migrations.</p>
-</li>
-<li><p><code v-pre>versions</code> : Versions is a folder which contains all the migration scripts for upgrading or downgrading the datbase. The files inside version are mostly auto-generated and we just need to edit them as per our use-case.</p>
+<li><p>Port mapping: For the container to be connected to the world, we need to map a port from the container (p1) to a port on the host (p2). This way all the traffic on the p2 is redirected to p1. To do this, we use the <code v-pre>-p</code> flag : <code v-pre>docker run -p &lt;p2&gt;:&lt;p1&gt; &lt;image&gt;</code></p>
+<p>Eg: <code v-pre>docker run -p 8000:5000 ubuntu</code>  -&gt; All the traffic from the host&#x27;s port 8000 is forwarded to the port 5000 of the container. So when an external user hits port 8000 of host, it is actually hitting port 5000 of the container.</p>
 </li>
 </ol>
-</li>
-</ul>
-<doc-anchor-target id="general-flow-of-things">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#general-flow-of-things">#</doc-anchor-trigger>
-        <span>General Flow of things</span>
-    </h2>
-</doc-anchor-target>
-<p>In alembic, for most use-cases, the following flow is followed:</p>
-<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">graph TD;
-    A[Init Alembic]--&gt;B[Check Current State];
-    B --&gt; C[Create a new revision];
-    C --&gt; D[Write upgrade and downgrade scripts];
-    D --&gt; E{If any conflicts?};
-    E --&gt; |Yes| F[Resolve Conflicts];
-    E --&gt; |No| G[Upgrade the DB to the latest revision];
-    F --&gt; G;
-    G --&gt; B;</pre></div>
-<doc-anchor-target id="key-commands">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#key-commands">#</doc-anchor-trigger>
-        <span>Key Commands</span>
-    </h2>
-</doc-anchor-target>
-<p>Alembic has the following commands available for us in its CLI:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">branches            Show current branch points.
-check               Check if revision command with autogenerate has pending upgrade ops.
-current             Display the current revision for a database.
-downgrade           Revert to a previous version.
-edit                Edit revision script(s) using $EDITOR.
-ensure_version      Create the alembic version table if it doesn't exist already .
-heads               Show current available heads in the script directory.
-history             List changeset scripts in chronological order.
-init                Initialize a new scripts directory.
-list_templates      List available templates.
-merge               Merge two revisions together. Creates a new migration file.
-revision            Create a new revision file.
-show                Show the revision(s) denoted by the given symbol.
-stamp               'stamp' the revision table with the given revision; don't run any migrations.
-upgrade             Upgrade to a later version.</code></pre>
-</doc-codeblock></div>
-<p>From the above, the ones that are the most important are <code v-pre>history</code>, <code v-pre>revision</code> and <code v-pre>upgrade</code>.</p>
-<doc-anchor-target id="history">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#history">#</doc-anchor-trigger>
-        <span>History</span>
-    </h3>
-</doc-anchor-target>
-<p>History is like your <code v-pre>git log</code>. It shows all the changes made in their appropriate order. It shows all the changes/commits or revisions along with their description and the head.</p>
-<p>To view the history, we need to run <code v-pre>alembic history</code></p>
-<doc-anchor-target id="revision">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#revision">#</doc-anchor-trigger>
-        <span>Revision</span>
-    </h3>
-</doc-anchor-target>
-<p>A revision in alembic is like a git commit. It marks a change in the DB and contains the details about how to get to that state or come back from the state.</p>
-<p>Every revision has a description and also a unique hash. This hash can then be used upgrade or downgrade to that particular revision.</p>
-<p>To create a new revision we run</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">alembic revision -m &quot;This is a test revision&quot;</code></pre>
-</doc-codeblock></div>
-<p>This will create a new revision file inside the version.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">&quot;&quot;&quot;This is a test revision
-
-Revision ID: a3d1cd8212da
-Revises: 
-Create Date: 2023-07-29 15:32:10.024636
-
-&quot;&quot;&quot;
-from alembic import op
-import sqlalchemy as sa
-
-
-# revision identifiers, used by Alembic.
-revision = 'a3d1cd8212da'
-down_revision = None
-branch_labels = None
-depends_on = None
-
-
-def upgrade() -&gt; None:
-    pass
-
-
-def downgrade() -&gt; None:
-    pass</code></pre>
-</doc-codeblock></div>
-<p>Here, we can see, every revision has an ID. It also states the revision it upgrades or goes back to.
-If in case there is a conflict where 2 revisions roll back to the same version, we can change the down_revision values to put them in the right order.</p>
-<p>The revision also has other features like</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">alembic revision --autogenerate --rev-id my_custom_revision</code></pre>
-</doc-codeblock></div>
-<ul>
-<li><code v-pre>--rev-id</code> is used to give a custom ID to the revisions.</li>
-<li><code v-pre>--autogenerate</code> goes through the DB and compares the difference between the DB and the scripts. And it autogenerates the commands to bring the scripts upto the DB.
-This can be useful when you are doing manual additions to the DB and want to have them added to the scripts too.</li>
-</ul>
+<p>We can also map multiple ports from our container. Say we want to map port 5000 and 5500 from our container to 8000 and 8500 on host, we will call the <code v-pre>-p</code> flag twice.
+Eg: <code v-pre>docker run -p 8000:5000 -p 8500:5500 &lt;image&gt;</code></p>
+<p><figure class="content-center">
+    <img src="../../../resources/docker-run-1.png" alt="">
+    <figcaption class="caption"></figcaption>
+</figure>
+In the above, we can see that when we run the <code v-pre>ps</code> command, the ports are displayed. It shows that the port 8000 from the host (0.0.0.0) is mapped to 5000 of the container</p>
 <blockquote>
-<p>Alembic keeps a track of the current version in the DB with the help of a table called <code v-pre>alembic</code>. So if we ever need to check the verison of something we can check it on the DB. The local version is dictated by the revision files. Alembic iterates through all the revision files to generate a history.</p>
+<p>The internal IP of the docker container can be found in the networks section in <code v-pre>docker inspect</code></p>
 </blockquote>
-<doc-anchor-target id="upgrade-and-downgrade">
+<doc-anchor-target id="volume-mapping--v">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#upgrade-and-downgrade">#</doc-anchor-trigger>
-        <span>Upgrade and Downgrade</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#volume-mapping--v">#</doc-anchor-trigger>
+        <span>Volume Mapping (-v)</span>
     </h3>
 </doc-anchor-target>
-<p>Whenever we have changes that need to be migrated to the DB, we run the upgrade command. The upgrade command checks the DB and runs all the scripts between the version in the DB and the current local version.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">alembic upgrade head</code></pre>
-</doc-codeblock></div>
-<p>This brings the DB to the latest revision. In case we need to upgrade to a specific revision, we can directly mention the id of that commit. <code v-pre>alembic upgrade &lt;id&gt;</code></p>
-<p>Similar to upgrade, downgrade brings down the DB to a previous revision if we mention that ID OR we can mention it relative to the head.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">alembic downgrade -1 OR alembic downgrade &lt;id&gt;</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="conclusion">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#conclusion">#</doc-anchor-trigger>
-        <span>Conclusion</span>
-    </h2>
-</doc-anchor-target>
-<p>This was a very brief overview of alembic and what its capabilities are. There are a lot more concepts like branching, merging branches etc. But on the broader scale, this is how alembic is used to migrate and control database schemas. It&#x27;s a useful tool for simplifying and organising database migrations.</p>
+<p>When a container is created, it has its own isolated filesystem. Any changes to the files within the container are its own. If we stop the container, the data is still there. But when we stop a container, all data is lost. If we want to avoid this, so that the data is still persisted even after we are done with container, we can map it to a local directory on the host using the <code v-pre>-v</code> flag.</p>
+<p><code v-pre>docker run -v &lt;path on host&gt;:&lt;path on container&gt; &lt;image&gt;</code></p>
+<blockquote>
+<p>Observation: When using flags like <code v-pre>-v</code> and <code v-pre>-p</code>, the host always comes first and then the container. ie: <code v-pre>&lt;host&gt;:&lt;container&gt;</code></p>
+</blockquote>
 
                                 
                                 <!-- Required only on API pages -->
@@ -435,16 +334,16 @@ This can be useful when you are doing manual additions to the DB and want to hav
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../docker/notes/docker-basics/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">Docker basics</span>
+                                            </span>
+                                        </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../articles/react/learning-react-the-hard-way/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Learning React the HARD Way</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
                                     </div>
                                 </nav>
                             </footer>
@@ -485,6 +384,6 @@ This can be useful when you are doing manual additions to the DB and want to hav
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Alembic", level: 3, icon: "file", hasPrism: true, hasMermaid: true, hasMath: false }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Docker run", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>

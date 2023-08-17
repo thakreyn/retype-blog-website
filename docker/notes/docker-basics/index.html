@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/retype-blog-website">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.745485475096">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.1.0.745573790268">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.1.0">
 
     <!-- Primary Meta Tags -->
-    <title>Docker Basics</title>
-    <meta name="title" content="Docker Basics">
+    <title>Docker basics</title>
+    <meta name="title" content="Docker basics">
     <meta name="description" content="It is a containerisation platform. The main difference between containers and VMs is that the VMs work on top of hardware level.">
 
     <!-- Canonical -->
@@ -20,24 +20,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thakreyn.github.io/retype-blog-website/docker/notes/docker-basics/">
-    <meta property="og:title" content="Docker Basics">
+    <meta property="og:title" content="Docker basics">
     <meta property="og:description" content="It is a containerisation platform. The main difference between containers and VMs is that the VMs work on top of hardware level.">
-    <meta property="og:image" content="https://thakreyn.github.io/retype-blog-website/resources/docker-notes-cover.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://thakreyn.github.io/retype-blog-website/docker/notes/docker-basics/">
-    <meta property="twitter:title" content="Docker Basics">
+    <meta property="twitter:title" content="Docker basics">
     <meta property="twitter:description" content="It is a containerisation platform. The main difference between containers and VMs is that the VMs work on top of hardware level.">
-    <meta property="twitter:image" content="https://thakreyn.github.io/retype-blog-website/resources/docker-notes-cover.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("/retype-blog-website/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.1.0.745485475096" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.1.0.745573790268" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.1.0.745485475096" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.1.0.745573790268" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.1.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.1.0.745485475096" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.1.0.745573790268" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -244,14 +242,9 @@
 <doc-anchor-target id="docker-basics" class="break-words">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#docker-basics">#</doc-anchor-trigger>
-        <span>Docker Basics</span>
+        <span>Docker basics</span>
     </h1>
 </doc-anchor-target>
-<p><figure class="content-center">
-    <img src="../../../resources/docker-notes-cover.png" alt="">
-    <figcaption class="caption"></figcaption>
-</figure>
-</p>
 <doc-anchor-target id="what-is-a-container">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#what-is-a-container">#</doc-anchor-trigger>
@@ -272,10 +265,10 @@
         <span>Basic Docker Commands:</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="docker-run---start-a-container">
+<doc-anchor-target id="run---start-a-container">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#docker-run---start-a-container">#</doc-anchor-trigger>
-        <span><code v-pre>docker run</code> - Start a container</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#run---start-a-container">#</doc-anchor-trigger>
+        <span><code v-pre>run</code> - Start a container</span>
     </h3>
 </doc-anchor-target>
 <p><code v-pre>docker run &lt;image-name&gt;</code>
@@ -287,67 +280,59 @@ Since a container requires a process that will be run on that, we can pass in a 
 <blockquote>
 <p>When we run a docker container using <code v-pre>docker run</code>, it waits for the container to finish and holds the terminal input till that time. We can view at the stdout of the container but can&#x27;t give input.</p>
 </blockquote>
-<doc-anchor-target id="-d---detached-mode">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#-d---detached-mode">#</doc-anchor-trigger>
-        <span><code v-pre>-d</code> - Detached Mode</span>
-    </h4>
-</doc-anchor-target>
-<p>To run the container in detached mode, we the <code v-pre>-d</code> flag. In case we have detached from a container and want to go back to it, we use the <code v-pre>attach</code> command.</p>
-<doc-anchor-target id="-it---interactive-mode">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#-it---interactive-mode">#</doc-anchor-trigger>
-        <span><code v-pre>-it</code> - Interactive Mode</span>
-    </h4>
-</doc-anchor-target>
-<p>To interact with the running container and go inside its shell, we use the <code v-pre>-it</code> flag. This way we get access to the shell inside the container. To exit from that shell, simply type <code v-pre>exit</code>.</p>
-<doc-anchor-target id="--name---name-container">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#--name---name-container">#</doc-anchor-trigger>
-        <span><code v-pre>--name</code> - Name Container</span>
-    </h4>
-</doc-anchor-target>
-<p>It is used to give the container a unique name so that it can be easily referenced.
-eg: <code v-pre>docker run --name &lt;Name&gt; &lt;image&gt;</code></p>
-<doc-anchor-target id="docker-attach---attach-to-a-running-container">
+<p>The <code v-pre>run</code> command has a lot of flags and options.
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">Docker run</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>../docker-run/</span>
+    </div>
+    <a href="../docker-run/" class="absolute block inset-0"></a>
+</div>
+ : contains detailed information about the run command.</p>
+<doc-anchor-target id="attach---attach-to-a-running-container">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#docker-attach---attach-to-a-running-container">#</doc-anchor-trigger>
-        <span><code v-pre>docker attach</code> - Attach to a running container</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#attach---attach-to-a-running-container">#</doc-anchor-trigger>
+        <span><code v-pre>attach</code> - Attach to a running container</span>
     </h3>
 </doc-anchor-target>
 <p><code v-pre>docker attach &lt;container-id&gt;</code>
 We can use this to attach to a running container. This way, we can look at its logs to the stdout. The container id doesn&#x27;t need to be exact, only the first few unique characters are sufficient for that.</p>
-<doc-anchor-target id="docker-ps---list-containers">
+<doc-anchor-target id="ps---list-containers">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#docker-ps---list-containers">#</doc-anchor-trigger>
-        <span><code v-pre>docker ps</code> - List Containers</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ps---list-containers">#</doc-anchor-trigger>
+        <span><code v-pre>ps</code> - List Containers</span>
     </h3>
 </doc-anchor-target>
 <p><code v-pre>docker ps &lt;options&gt;</code>
 It is used to list all the containers. By default it is used to list running containers. But <code v-pre>-a</code> can be used to view all types. Running, stopped etc.</p>
-<doc-anchor-target id="docker-stop---stop-container">
+<doc-anchor-target id="stop---stop-container">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#docker-stop---stop-container">#</doc-anchor-trigger>
-        <span><code v-pre>docker stop</code> - Stop Container</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#stop---stop-container">#</doc-anchor-trigger>
+        <span><code v-pre>stop</code> - Stop Container</span>
     </h3>
 </doc-anchor-target>
 <p><code v-pre>docker stop &lt;container name / container ID&gt;</code>
 It is used to just stop a container from working. Doing this does not delete the container, it just pauses it, it still lives on the disk drive. The resources of the container are not cleared. If we want to do that, we use <code v-pre>rm</code></p>
 <p>We can pass multiple containers to the stop command.
 eg: <code v-pre>docker stop aee1 qwe2 asd4 ...</code> and it will stop all of them at once.</p>
-<doc-anchor-target id="docker-rm---removedelete-container">
+<doc-anchor-target id="rm---removedelete-container">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#docker-rm---removedelete-container">#</doc-anchor-trigger>
-        <span><code v-pre>docker rm</code> - Remove/Delete Container</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#rm---removedelete-container">#</doc-anchor-trigger>
+        <span><code v-pre>rm</code> - Remove/Delete Container</span>
     </h3>
 </doc-anchor-target>
 <p><code v-pre>docker rm &lt;container name / container ID&gt;</code>
 It completely deletes a container and its resources. (To delete a container, it first needs to be stopped)
 Similar to <code v-pre>stop</code>, we can pass multiple containers to the <code v-pre>rm</code> command to remove all at once.</p>
-<doc-anchor-target id="docker-images---list-images">
+<doc-anchor-target id="images---list-images">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#docker-images---list-images">#</doc-anchor-trigger>
-        <span><code v-pre>docker images</code> - List images</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#images---list-images">#</doc-anchor-trigger>
+        <span><code v-pre>images</code> - List images</span>
     </h3>
 </doc-anchor-target>
 <p>Shows all the images available on the local host. In case we need to download an image but not start a container from it. We use <code v-pre>docker pull &lt;image name&gt;</code></p>
@@ -355,15 +340,31 @@ Similar to <code v-pre>stop</code>, we can pass multiple containers to the <code
 <blockquote>
 <p>We need to make sure that the image is not being actively used.</p>
 </blockquote>
-<doc-anchor-target id="docker-exec---run-commands-on-running-container">
+<doc-anchor-target id="exec---run-commands-on-running-container">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#docker-exec---run-commands-on-running-container">#</doc-anchor-trigger>
-        <span><code v-pre>docker exec</code> - Run Commands on running container</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#exec---run-commands-on-running-container">#</doc-anchor-trigger>
+        <span><code v-pre>exec</code> - Run Commands on running container</span>
     </h3>
 </doc-anchor-target>
 <p><code v-pre>docker exec &lt;commands&gt;</code>
 This is used to run commands on running docker containers.
 eg: <code v-pre>docker exec echo /cat/etc</code></p>
+<doc-anchor-target id="inspect---inspect-container-details">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#inspect---inspect-container-details">#</doc-anchor-trigger>
+        <span><code v-pre>inspect</code> - Inspect Container Details</span>
+    </h3>
+</doc-anchor-target>
+<p>Although <code v-pre>docker ps</code> gives us some information about the container, if we need additional comprehensive information, we use inspect.</p>
+<p><code v-pre>docker inspect &lt;container name / ID&gt;</code> shows the details about the container in a JSON format.</p>
+<doc-anchor-target id="logs---view-container-logs">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#logs---view-container-logs">#</doc-anchor-trigger>
+        <span><code v-pre>logs - View Container Logs</code></span>
+    </h3>
+</doc-anchor-target>
+<p>When we run a container in detached mode, we cannot see the logs in our terminal directly. For this we use the logs command.</p>
+<p><code v-pre>docker logs &lt;container name / ID&gt;</code> shows all the STDOUT logs of the container.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -373,7 +374,7 @@ eg: <code v-pre>docker exec echo /cat/etc</code></p>
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../articles/react/react---installation/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../articles/react/react---installation/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
@@ -383,6 +384,13 @@ eg: <code v-pre>docker exec echo /cat/etc</code></p>
                                     </div>
                             
                                     <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../docker/notes/docker-run/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Docker run</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
                                     </div>
                                 </nav>
                             </footer>
@@ -423,6 +431,6 @@ eg: <code v-pre>docker exec echo /cat/etc</code></p>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Docker Basics", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Docker basics", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
