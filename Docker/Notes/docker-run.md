@@ -48,7 +48,6 @@ In the above, we can see that when we run the `ps` command, the ports are displa
 
 > The internal IP of the docker container can be found in the networks section in `docker inspect`
 
-
 ### Volume Mapping (-v)
 When a container is created, it has its own isolated filesystem. Any changes to the files within the container are its own. If we stop the container, the data is still there. But when we stop a container, all data is lost. If we want to avoid this, so that the data is still persisted even after we are done with container, we can map it to a local directory on the host using the `-v` flag.
 
@@ -58,6 +57,16 @@ When a container is created, it has its own isolated filesystem. Any changes to 
 
 ### Environment Variables (-e)
 Sometimes, we need to pass in environment variables to pass with the image. This can be done using the `-e` flag. This flag followed by the values sets the env variables for the image.
+```shell
+# Example
+docker run -e POSTGRES_PASSWORD="secret" postgres
+```
 
-eg: `docker run -e POSTGRES_PASSWORD="secret" postgres`
+In case we need to view the environment variables for the container that is already running, we can use `docker inspect` to do that.
 
+### Entrypoint (--entrypoint)
+Whenever we need to override or provide a custom endpoint, we use this flag.
+```shell
+# Example
+docker run --entrypoint sleep 10 ubuntu 
+```

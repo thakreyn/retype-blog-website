@@ -1,4 +1,4 @@
-[](/resources/docker-notes-cover.png)
+![](/resources/docker-notes-cover.png)
 
 ## What is a container?
 
